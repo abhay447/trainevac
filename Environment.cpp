@@ -38,10 +38,21 @@ void CreateMap()
 
 void AddAgents(int numAgents)
 {	
-    for(int i=0;i<numAgents;i++)
-    {
-    	myPeds.push_back(Pedestrian(i, RandomFloat(10.0f,2080.0f),RandomFloat(10.0f,304.0f)));
-    }
-          
+    
+    ifstream myfile;
+	string line;
+	myfile.open("PedMaps/scene1");
+	GLfloat  px,py;
+	int id;
+	while(getline(myfile,line))
+	{
+		istringstream iss(line);
+		if(line[0]=='/' && line[1]=='/' || line[0]==' ')
+		    continue;
+		while(iss>>id>>px>>py)
+		{
+			myPeds.push_back(Pedestrian(id,px,py));
+		}
+	}          
 }
 

@@ -57,7 +57,7 @@ void ApplyPedestrianRepulsionForces()
 		{
 			float forceMagnitude = 0.0f;
 			float pedDistance = pow(pow((myPeds[i].px-myPeds[j].px),2) + pow((myPeds[i].py-myPeds[j].py),2),0.5f);
-			if(pedDistance<90)	//pedestrian collision
+			if(pedDistance<10)	//pedestrian collision
 			{
 				forceMagnitude = 15.0f;				
 				//pedCollision(&myPeds.at(i),&myPeds.at(j));
@@ -91,9 +91,9 @@ void ApplyPedestrianRepulsionForces()
     			}
     			
 			}
-			else if(pedDistance<120)	//pedestrian repulsion
+			else if(pedDistance<80)	//pedestrian repulsion
 			{
-				forceMagnitude = 0.25*getPedRepelMag(myPeds[i],myPeds[j]);
+				forceMagnitude = 5*getPedRepelMag(myPeds[i],myPeds[j]);
 			}
 			if(forceMagnitude > 0.0f){    			
 			}
@@ -126,7 +126,7 @@ void clearPedestrians()
 {
 	for(int i=0;i<myPeds.size();i++)
 	{
-		if(myPeds[i].px >= 2081.0f || myPeds[i].px <= 0.0f || myPeds[i].py >= 302.0f || myPeds[i].py <= 0.0f)
+		if(myPeds[i].px >= 2081.0f || myPeds[i].px <= -0.0f || myPeds[i].py >= 342.0f || myPeds[i].py <= -40.0f)
 		{
 			myPeds[i].destroy();
 			myPeds.erase(myPeds.begin()+i);

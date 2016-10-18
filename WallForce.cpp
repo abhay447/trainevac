@@ -8,11 +8,11 @@ int inWallForceZone(Wall myWall,Pedestrian myPed)
 {	
 	float alongWall = abs((myPed.px - myWall.cx)*myWall.ny - (myPed.py - myWall.cy)*myWall.nx);
 	float perpWall  = abs((myPed.px - myWall.cx)*myWall.nx + (myPed.py - myWall.cy)*myWall.ny);
-	if(perpWall > 20)
+	if(perpWall > 150)
 		return 0;
 	if(alongWall > myWall.length/2)
 		return 0;
-	if(perpWall < 80)
+	if(perpWall < 40)
 		return -1;
 	return 1;
 }

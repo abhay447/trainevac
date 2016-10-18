@@ -16,7 +16,7 @@ float getPedRepelMag(Pedestrian ped1, Pedestrian ped2)
    	AccelPerp        = ped2.ax*(ped2.py - ped1.py)    - ped2.vy*(ped2.px - ped1.px);
 	AccelPerp        = fabs(AccelPerp)/pow(pow( (ped2.px - ped1.px),2) + pow((ped2.py - ped1.py),2),0.5f)/100;
 	float force      = (PedDistCoeff*exp(-pedDistance) + PedAccelCoeff*AccelPerp + PedSpeedCoeff*speedAlong);
-	return force*100;	
+	return force*70;	
 }
 
 
