@@ -51,7 +51,10 @@ void AddAgents(int numAgents)
 		    continue;
 		while(iss>>id>>px>>py)
 		{
-			myPeds.push_back(Pedestrian(id,px,py));
+            int gender = rand() % 2;
+            int age = rand() % 51 + 19;
+			myPeds.push_back(Pedestrian(id,px,py,age,gender));
+            //myPeds.push_back(Pedestrian(id,px,py,19,0));
 		}
 	}          
 }
