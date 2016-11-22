@@ -64,7 +64,7 @@ Pedestrian::Pedestrian(int PID, GLfloat PX, GLfloat PY,int PAge,int PGender)
     
     ageF = getAgeFactor(PAge);
     waistF = getWaistFactor(PAge,PGender);
-    maxSpeed = 0.7f*(0.4f*ageF + 0.6f*waistF)/(ageF+waistF);
+    maxSpeed = 0.4f*(0.4f*ageF + 0.6f*waistF)/(ageF+waistF);
 }
 
 void Pedestrian::clearForces()
